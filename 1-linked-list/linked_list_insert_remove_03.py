@@ -19,4 +19,19 @@ class LinkedList(LinkedList):
         return False
     
     def insert(self, node_index, val):
-        pass
+        new_node = Node(value)
+        temp = self.get(index - 1)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length += 1   
+        return True 
+    
+    def remove(self, node_index):
+        pre = self.get(index - 1)
+        temp = pre.next
+        pre.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
+
+
