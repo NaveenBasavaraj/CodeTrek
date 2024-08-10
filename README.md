@@ -1,2 +1,2 @@
 # CodeTrek
-Master Leetcode 75
+Leetcode 75
