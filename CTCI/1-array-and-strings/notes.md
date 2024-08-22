@@ -5,7 +5,7 @@
 
 ### Hash Tables
 
-```
+```python
 class Node:
     def __init__(self, key, value):
         self.key = key
