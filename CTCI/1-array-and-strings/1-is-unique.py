@@ -4,6 +4,11 @@ class IsUnique:
     What if you cannot use additional data structures?
     '''
     def using_set(self, string):
+        '''
+         using set function
+         either using length of set matches 
+         or checking if char is already seen
+        '''
         # return len(set(string)) == len(string)
         seen = set()
         for ch in strings:
@@ -12,7 +17,7 @@ class IsUnique:
             seen.add(ch)
         return True
     
-    def is_unique_chars(self, string):
+    def is_unique_chars_hash_index(self, string):
         if len(string) > 128:
             # i.e not ascii
             return False
