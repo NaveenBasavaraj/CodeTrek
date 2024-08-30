@@ -1,6 +1,3 @@
-Certainly! Here is a Markdown-formatted explanation that outlines the problem and provides Python code for each method without using special libraries like `Counter`.
-
-```markdown
 # Palindrome Permutation Checker
 
 ## Problem Explanation
@@ -120,4 +117,4 @@ print(is_permutation_of_palindrome("Tact Coa"))  # Output: True
 - **XOR**: Use XOR to efficiently track odd counts and verify that the result has at most one bit set.
 
 Each approach effectively solves the problem but uses different techniques to manage and check character frequencies.
-```
+
