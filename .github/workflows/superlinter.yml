@@ -16,23 +16,32 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10'  # Specify a stable version
+          python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
-          pip install black markdownlint
+          pip install black
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Specify a stable Node.js version
+
+      - name: Install markdownlint
+        run: |
+          npm install -g markdownlint-cli
 
       - name: Format Python code
         run: |
-          black .  # Formats all Python files in the repository
+          black .
 
       - name: Format Markdown files
         run: |
-          markdownlint --fix "**/*.md"  # Adjust file patterns as needed
+          markdownlint --fix "**/*.md"
 
       - name: Check for code formatting
         run: |
-          git diff --exit-code  # Fail the action if there are uncommitted changes
+          git diff --exit-code
 
       - name: Run Super-Linter
         uses: github/super-linter@v4
