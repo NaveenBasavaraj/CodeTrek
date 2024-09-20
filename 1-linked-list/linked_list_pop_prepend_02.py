@@ -1,6 +1,6 @@
 from linked_list_01 import LinkedList, ListNode
 
-class LinkedList(LinkedList):
+class LinkedListPopPrepend(LinkedList):
     def prepend(self, val):
         newnode = ListNode(val)
         if self.length == 0:
@@ -23,7 +23,7 @@ class LinkedList(LinkedList):
         return currhead
 
 if __name__ == "__main__":
-    my_linked_list = LinkedList(10)
+    my_linked_list = LinkedListPopPrepend(10)
     print('LL before prepend():')
     
     my_linked_list.print_list()
