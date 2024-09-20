@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 'latest'  # Use the latest stable Python version
+          python-version: '3.10'  # Specify a stable version
 
       - name: Install dependencies
         run: |
