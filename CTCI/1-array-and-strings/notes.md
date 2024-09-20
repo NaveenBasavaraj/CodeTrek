@@ -1,4 +1,4 @@
-## Array and Strings
+# Array and Strings
 
 * Array questions and String questions are interchangeable.
 * A question on array and be instead asked as a string
