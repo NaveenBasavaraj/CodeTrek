@@ -1,4 +1,4 @@
-### Problem Statement
+# Problem Statement
 
 **Check if Two Strings Are Permutations of Each Other**
 
