@@ -1,6 +1,6 @@
 from linked_list_01 import LinkedList, ListNode
 
-class LinkedList(LinkedList):
+class LinkedListInsertRemove(LinkedList):
     def get_node(self, node_index):
         if node_index >= self.length:
             return None
