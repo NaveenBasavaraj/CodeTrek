@@ -1,4 +1,4 @@
-## Graphs
+# Graphs
 
 A graph is a data structure made up of nodes (like list nodes and tree nodes), where the nodes may be connected by pointers.
 
