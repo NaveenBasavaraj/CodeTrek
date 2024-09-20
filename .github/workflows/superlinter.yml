@@ -25,7 +25,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Specify a stable Node.js version
+          node-version: '16'
 
       - name: Install markdownlint
         run: |
@@ -38,6 +38,14 @@ jobs:
       - name: Format Markdown files
         run: |
           markdownlint --fix "**/*.md"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.name "GitHub Action"
+          git config --local user.email "action@github.com"
+          git add "**/*.md"
+          git commit -m "Automated Markdown fixes" || echo "No changes to commit"
+          git push
 
       - name: Check for code formatting
         run: |
