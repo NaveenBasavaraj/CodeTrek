@@ -1,7 +1,4 @@
-# CodeTrek
-DSA in Python, Js, TypeScript
-
-## Steps to get into big companies
+# Steps to get into big companies
 
 1.Mental Focus
 2.Learn 2-3 programming languages - python, typescript, rust
