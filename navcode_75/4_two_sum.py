@@ -8,8 +8,13 @@ class TwoSum:
         seen = {} # dictionary
 
         for i, val in enumerate(nums):
-            k = target - val
-            if val not in seen:
+            k = abs(target - val)
+            if k not in seen:
                 seen[val] = i
             else:
-                return (seen[val], i)
+                return (seen[k], i)
+
+
+if __name__ == '__main__':
+    x = TwoSum()
+    print(x.retIndexes([2,11,7,15],9))
