@@ -4,5 +4,5 @@
 
 2. Space Complexity: Describes amount of memory or space utilized by an algorithm/program
 
-
+Big(O): describes 
 

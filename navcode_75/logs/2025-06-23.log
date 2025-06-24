@@ -1,0 +1,8 @@
+2025-06-23 14:10:44,462 - DEBUG - navlogs - Calling optmized_solution with args=(<__main__.ContainsDuplicates object at 0x7f4581114140>, [1, 2, 3, 1]), kwargs={}
+2025-06-23 14:10:44,463 - DEBUG - navlogs - optmized_solution returned False
+2025-06-23 14:10:44,463 - DEBUG - navlogs - Calling optmized_solution with args=(<__main__.ContainsDuplicates object at 0x7f4581114140>, [1, 2, 3, 4]), kwargs={}
+2025-06-23 14:10:44,463 - DEBUG - navlogs - optmized_solution returned True
+2025-06-23 14:11:19,079 - DEBUG - navlogs - Calling optmized_solution with args=(<__main__.ContainsDuplicates object at 0x7f86ce9ec140>, [1, 2, 3, 1]), kwargs={}
+2025-06-23 14:11:19,079 - DEBUG - navlogs - optmized_solution returned False
+2025-06-23 14:11:19,079 - DEBUG - navlogs - Calling optmized_solution with args=(<__main__.ContainsDuplicates object at 0x7f86ce9ec140>, [1, 2, 3, 4]), kwargs={}
+2025-06-23 14:11:19,079 - DEBUG - navlogs - optmized_solution returned True
