@@ -1,0 +1,26 @@
+2025-06-24 06:58:59,758 - DEBUG - navlogs - Calling findNum with args=(<__main__.MissingNumber object at 0x7f1ff9ef2030>, [0, 3, 1], 3), kwargs={}
+2025-06-24 06:58:59,759 - DEBUG - navlogs - findNum returned 2
+2025-06-24 06:58:59,759 - DEBUG - navlogs - Calling findNumOpt with args=(<__main__.MissingNumber object at 0x7f1ff9ef2030>, [0, 3, 1], 3), kwargs={}
+2025-06-24 06:58:59,759 - DEBUG - navlogs - findNumOpt returned 2
+2025-06-24 06:58:59,759 - DEBUG - navlogs - Calling findNumSort with args=(<__main__.MissingNumber object at 0x7f1ff9ef2030>, [0, 3, 1], 3), kwargs={}
+2025-06-24 06:58:59,759 - DEBUG - navlogs - findNumSort returned 1
+2025-06-24 07:00:26,043 - DEBUG - navlogs - Calling findNum with args=(<__main__.MissingNumber object at 0x7f35e4406090>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:00:26,044 - DEBUG - navlogs - findNum returned 2
+2025-06-24 07:00:26,044 - DEBUG - navlogs - Calling findNumOpt with args=(<__main__.MissingNumber object at 0x7f35e4406090>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:00:26,044 - DEBUG - navlogs - findNumOpt returned 2
+2025-06-24 07:00:26,044 - DEBUG - navlogs - Calling findNumSort with args=(<__main__.MissingNumber object at 0x7f35e4406090>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:00:26,044 - DEBUG - navlogs - findNumSort returned 1
+2025-06-24 07:00:34,844 - DEBUG - navlogs - Calling findNum with args=(<__main__.MissingNumber object at 0x7fb780be2090>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:00:34,844 - DEBUG - navlogs - findNum returned 2
+2025-06-24 07:00:34,844 - DEBUG - navlogs - Calling findNumOpt with args=(<__main__.MissingNumber object at 0x7fb780be2090>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:00:34,844 - DEBUG - navlogs - findNumOpt returned 2
+2025-06-24 07:00:34,844 - DEBUG - navlogs - Calling findNumSort with args=(<__main__.MissingNumber object at 0x7fb780be2090>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:00:34,844 - DEBUG - navlogs - findNumSort returned 2
+2025-06-24 07:03:20,735 - DEBUG - navlogs - Calling findNum with args=(<__main__.MissingNumber object at 0x7fa36692a750>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:03:35,860 - DEBUG - navlogs - Calling findNum with args=(<__main__.MissingNumber object at 0x7fe6589e9040>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:04:11,796 - DEBUG - navlogs - Calling findNum with args=(<__main__.MissingNumber object at 0x7f70fa45da60>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:04:11,796 - DEBUG - navlogs - findNum returned 2 in 4.039960913360119e-06 seconds
+2025-06-24 07:04:11,796 - DEBUG - navlogs - Calling findNumOpt with args=(<__main__.MissingNumber object at 0x7f70fa45da60>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:04:11,796 - DEBUG - navlogs - findNumOpt returned 2 in 2.0300503820180893e-06 seconds
+2025-06-24 07:04:11,796 - DEBUG - navlogs - Calling findNumSort with args=(<__main__.MissingNumber object at 0x7f70fa45da60>, [0, 3, 1], 3), kwargs={}
+2025-06-24 07:04:11,796 - DEBUG - navlogs - findNumSort returned 2 in 3.430002834647894e-06 seconds

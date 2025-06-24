@@ -2,6 +2,7 @@ import logging
 import functools
 import os
 from datetime import datetime
+from time import perf_counter
 
 # Generate log filename based on today's date
 today_str = datetime.now().strftime("%Y-%m-%d")
@@ -28,9 +29,13 @@ def log_decorator(level):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             logger.log(level, f"Calling {func.__name__} with args={args}, kwargs={kwargs}")
+            startts = perf_counter()
             try:
                 result = func(*args, **kwargs)
-                logger.log(level, f"{func.__name__} returned {result}")
+                endts = perf_counter()
+                totalts = endts - startts
+                logger.log(level, f"{func.__name__} returned {result} in {totalts} seconds")
+
                 return result
             except Exception as e:
                 logger.exception(f"Exception in {func.__name__}: {e}")
