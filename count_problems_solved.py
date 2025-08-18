@@ -16,6 +16,6 @@ def count_problems_by_topic(base_path):
         
 
 if __name__ == "__main__":
-    repo_path = "/workspace/CodeTrek"
+    repo_path = "/workspace/CodeTrek/navcodes"
     count_problems_by_topic(repo_path)
     
