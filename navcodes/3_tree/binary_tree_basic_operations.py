@@ -27,4 +27,4 @@ class BinaryTree:
         return root
     
     def delete(self, root, val):
-        
+        pass
