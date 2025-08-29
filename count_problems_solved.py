@@ -9,7 +9,7 @@ def count_problems_by_topic(base_path):
 
         if os.path.isdir(topic_path):
             files = [f for f in os.listdir(topic_path) 
-                    if os.path.isfile(os.path.join(topic_path, f))]
+                    if os.path.isfile(os.path.join(topic_path, f)) and f.endswith(".py")]
             problem_count += len(files)
             print(f"{topic[2:]}: {len(files)} problem(s) solved")
     print(f"total problems solved: {problem_count}")
