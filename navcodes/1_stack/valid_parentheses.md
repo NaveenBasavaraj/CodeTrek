@@ -1,49 +1,12 @@
-```python
-class ValidParentheses:
-    def solution(self, s):
-        stack = []
-        close_to_open_map = {")": "(", "}": "{", "]": "["}
-
-        for ch in s:
-            if ch in close_to_open_map: 
-                if stack and stack[-1] == close_to_open_map[ch]:
-                    stack.pop()
-                else:
-                    return False
-            else:
-                stack.append(ch)  # FIXED: previously missing argument
-        
-        return not stack  # valid only if stack is empty at the end
-
-
-def main():
-    vp = ValidParentheses()
-    
-    # Valid cases
-    print(vp.solution("()"))        # True
-    print(vp.solution("()[]{}"))    # True
-    print(vp.solution("{[()]}"))    # True
-
-    # Invalid cases
-    print(vp.solution("(]"))        # False
-    print(vp.solution("([)]"))      # False
-    print(vp.solution("{[]}"))      # True
-    print(vp.solution("((("))       # False
-
-
-if __name__ == "__main__":
-    main()
-```
-
 ````markdown
 # 📘 Valid Parentheses Problem
 
-## Problem
-Given a string containing only characters `()[]{}`, determine if the input string is valid.  
-A string is valid if:
-1. Open brackets are closed by the same type of brackets.
-2. Open brackets are closed in the correct order.
-3. Every close bracket must have a corresponding open bracket.
+## Problem Statement
+We need to check whether a string of brackets `()[]{}` is **valid**.  
+A string is valid if:  
+1. Every opening bracket has a corresponding closing bracket.  
+2. Brackets are closed in the correct order (no crossing).  
+3. No unmatched or leftover brackets remain at the end.  
 
 ---
 
@@ -68,58 +31,99 @@ class ValidParentheses:
 
 ---
 
-## Example Walkthrough
+## Step-by-Step Explanation (Pattern in English)
 
-```python
-vp = ValidParentheses()
+1. **Stack as memory**
 
-vp.solution("()")        # True → simple valid pair
-vp.solution("()[]{}")    # True → multiple valid pairs
-vp.solution("{[()]}")    # True → nested valid pairs
-vp.solution("(]")        # False → mismatched
-vp.solution("([)]")      # False → wrong order
-vp.solution("{[]}")      # True → valid nesting
-vp.solution("(((")       # False → open brackets not closed
-```
+   * We use a **stack** to keep track of all the **opening brackets**.
+   * Whenever we see an opening bracket `(`, `{`, `[`, we **push** it onto the stack.
+
+2. **Mapping for quick lookup**
+
+   * A dictionary maps closing brackets to their matching opening ones:
+
+     ```python
+     {")": "(", "}": "{", "]": "["}
+     ```
+   * This allows **constant-time checking** when we meet a closing bracket.
+
+3. **Iterate through characters**
+
+   * For each character:
+
+     * **If it’s a closing bracket:**
+
+       * Check if stack is not empty **AND** the top matches.
+       * If yes → pop the top (valid match).
+       * If no → return `False` immediately (mismatch).
+     * **If it’s an opening bracket:** push it onto the stack.
+
+4. **Final check**
+
+   * At the end, if the stack is **empty**, then every opening bracket was matched → return `True`.
+   * If the stack still has items, some brackets were never closed → return `False`.
+
+---
+
+## Example Walkthroughs
+
+### Example 1: Input = `"()[]{}"`
+
+* Push `(` → stack = \["("]
+* See `)` → matches `(` → pop → stack = \[]
+* Push `[` → stack = \["\["]
+* See `]` → matches `[` → pop → stack = \[]
+* Push `{` → stack = \["{"]
+* See `}` → matches `{` → pop → stack = \[]
+* Stack empty → return `True` ✅
+
+### Example 2: Input = `"([)]"`
+
+* Push `(` → stack = \["("]
+* Push `[` → stack = \["(", "\["]
+* See `)` → expected `(`, but top is `[` → mismatch → return `False` ❌
+
+### Example 3: Input = `"((("`
+
+* Push `(` → stack = \["("]
+* Push `(` → stack = \["(", "("]
+* Push `(` → stack = \["(", "(", "("]
+* End of string → stack not empty → return `False` ❌
 
 ---
 
 ## ✅ Best Practices
 
-* Always use a **stack** for problems involving nested structures (LIFO order).
-* Use a **mapping dictionary** (`close_to_open_map`) for quick matching between open/close pairs.
-* Check stack **emptiness** before accessing its top (`stack[-1]`).
-* Return `not stack` at the end → ensures no unmatched open brackets remain.
-* Keep logic short and clean instead of writing many nested `if-else`.
+* Use a **stack** when the problem involves “last opened, first closed” patterns.
+* Use a **dictionary mapping** for easy and scalable matching logic.
+* Always check if the stack is **non-empty before peeking**.
+* Return early when a mismatch is found (fail fast).
+* Keep the solution concise and avoid deeply nested `if` statements.
 
 ---
 
 ## 🚀 Possible Extensions
 
-1. **Support for additional symbols** (e.g., `< >`).
+1. **Add `< >` brackets** to mapping.
 
    ```python
    close_to_open_map = {")":"(", "}":"{", "]":"[", ">":"<"}
    ```
 
-2. **Ignore non-bracket characters** (to handle expressions like `"a+(b*c)"`).
+2. **Skip non-bracket characters** (e.g., validate `"a+(b*c)"`).
 
-   ```python
-   if ch not in close_to_open_map and ch not in close_to_open_map.values():
-       continue
-   ```
+3. **Return index of first error** for better debugging instead of just `False`.
 
-3. **Custom Exception for Invalid Expression**
+4. **Custom Exception Handling**
 
    ```python
    class InvalidExpressionError(Exception):
        pass
    ```
 
-4. **Return index of first error** instead of just `False` (useful for debugging/parsing).
-
-5. **Performance optimization**: This is already O(n), but if input size is very large,
-   consider streaming character-by-character instead of loading entire string at once.
+5. **Apply pattern to HTML/XML tag validation** (replace single characters with full tags).
 
 ```
+
+
 ```
