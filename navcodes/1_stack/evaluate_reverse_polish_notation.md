@@ -1,4 +1,3 @@
-Perfect, let’s break this down in **simple English notes** so you’ll **remember the pattern**.
 
 ---
 
