@@ -1,86 +1,92 @@
-# MinStack Implementation - Notes
-
-## Code Overview
-
-```python
-class MinStack:
-    def __init__(self):
-        self.stack = []
-        self.minstack = []
-    
-    def push(self, val:int) -> None:
-        self.stack.append(val)
-        val = min(val, self.minstack[-1] if self.minstack else val)
-        self.minstack.append(val)
-    
-    def pop(self):
-        self.stack.pop()
-        self.minstack.pop()
-    
-    def top(self):
-        return self.stack[-1]
-    
-    def getMin(self):
-        return self.minstack[-1]
-```
 
 ---
 
-## Key Concepts
+## 📒 @notes for `MinStack`
 
-1. **Two Stacks**  
-   - `self.stack`: Stores all pushed values normally.  
-   - `self.minstack`: Keeps track of the minimum value at each push.
+### 🔹 What the code does
 
-2. **Push Operation**  
-   - Add element to `stack`.  
-   - Compute the minimum between the new value and the last minimum.  
-   - Push this minimum into `minstack`.
-
-3. **Pop Operation**  
-   - Remove top element from both `stack` and `minstack`.  
-   - Ensures both stacks remain aligned.
-
-4. **Top Operation**  
-   - Returns the top element of `stack`.  
-
-5. **GetMin Operation**  
-   - Returns the top element of `minstack`, which represents the current minimum.  
+* Implements a **special stack** that can return the **minimum element** in constant time.
+* Normal stack operations (`push`, `pop`, `top`) work as usual, but it adds `getMin` that always gives the smallest element quickly.
 
 ---
 
-## Example Walkthrough
+### 🔹 Step-by-step logic
 
-### Push Sequence: `push(5), push(3), push(7), push(2)`
+1. **Two Stacks are used**
 
-- After `push(5)` → `stack = [5]`, `minstack = [5]`  
-- After `push(3)` → `stack = [5, 3]`, `minstack = [5, 3]`  
-- After `push(7)` → `stack = [5, 3, 7]`, `minstack = [5, 3, 3]`  
-- After `push(2)` → `stack = [5, 3, 7, 2]`, `minstack = [5, 3, 3, 2]`  
+   * `stack`: keeps all values.
+   * `minstack`: keeps track of the running minimum (minimum value *at each point in time*).
 
-### GetMin
-- `getMin()` → `2`
+2. **Push**
 
-### Pop
-- `pop()` removes `2` → `stack = [5, 3, 7]`, `minstack = [5, 3, 3]`  
-- Now `getMin()` → `3`  
+   * Push value into `stack`.
+   * Push the smaller one between `val` and the previous min into `minstack`.
+   * So `minstack[-1]` always represents the min so far.
+
+3. **Pop**
+
+   * Pop from both `stack` and `minstack` so they stay aligned.
+
+4. **Top**
+
+   * Just return the top of `stack`.
+
+5. **GetMin**
+
+   * Return the top of `minstack` → guaranteed to be the current minimum.
 
 ---
 
-## Time & Space Complexity
+### 🔹 Why do we need two stacks?
 
-- **Push**: `O(1)`  
-- **Pop**: `O(1)`  
-- **Top**: `O(1)`  
-- **GetMin**: `O(1)`  
-- **Space Complexity**: `O(n)` (since we maintain two stacks)
+* If we used only one stack, we’d need to **scan the whole stack** to find the min each time → `O(n)`.
+* With a parallel `minstack`, we always know the current min instantly → `O(1)`.
 
 ---
 
-## Advantages
-- Constant-time retrieval of minimum value.  
-- Simple implementation using two stacks.
+### 🔹 Example Run
 
-## Limitations
-- Uses extra space for maintaining `minstack`.  
-- Not memory-optimal when the stack is very large.
+Sequence: `push(5), push(3), push(7), push(2)`
+
+* `stack = [5]`, `minstack = [5]`
+* `stack = [5,3]`, `minstack = [5,3]`
+* `stack = [5,3,7]`, `minstack = [5,3,3]`
+* `stack = [5,3,7,2]`, `minstack = [5,3,3,2]`
+* `getMin()` → `2`
+* After `pop()` → `stack = [5,3,7]`, `minstack = [5,3,3]`, so `getMin()` = `3`
+
+---
+
+### 🔹 Data Structure / Pattern
+
+* **Stack** + auxiliary **min stack**.
+* **Pattern**: Maintain extra structure to store "history" of key property (here, minimum).
+* This is a **design trick**: parallel stacks or queues are often used when one structure alone can’t track needed properties in constant time.
+
+---
+
+### 🔹 Similar problems you’ve seen
+
+* In **RPN evaluation**, we also used a stack but for arithmetic.
+* Here, same idea → use stack to keep **history** of elements.
+* Think of it like:
+
+  * *RPN*: stack tracks **operands** for math.
+  * *MinStack*: stack tracks **minimum values**.
+
+---
+
+### 🔹 Complexity
+
+* Push, Pop, Top, GetMin → `O(1)` each.
+* Space → `O(n)` because of the extra `minstack`.
+
+---
+
+### 🔹 How to remember
+
+* "Whenever you need constant-time tracking of some property (like min/max), **keep a helper stack** in sync with the main one."
+* "Main stack = actual values, helper stack = property snapshot."
+
+---
+
