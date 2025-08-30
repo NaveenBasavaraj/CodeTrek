@@ -38,7 +38,6 @@
    - If stack is empty at the end → valid.
    - If stack has leftovers → invalid.
 
----
 
 ## 🔹 Example Walkthroughs
 **Example 1:** `"()[]{}"` → ✅ Valid  
@@ -94,4 +93,3 @@
 
 ---
 
----
