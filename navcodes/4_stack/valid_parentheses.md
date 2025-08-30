@@ -4,7 +4,7 @@
 ````markdown
 # 📘 @notes: Valid Parentheses Problem
 
----
+
 
 ## 🔹 What the code does
 - Checks if a string with brackets `()[]{}` is **valid**.  
@@ -13,7 +13,7 @@
   2. Brackets close in the **correct order** (no crossing like `([)]`).
   3. No unmatched brackets remain at the end.  
 
----
+
 
 ## 🔹 Step-by-step logic
 1. **Stack for memory**
@@ -58,7 +58,7 @@
 - Push three times → ["(", "(", "("]  
 - End with non-empty stack → False  
 
----
+
 
 ## 🔹 Data Structure / Pattern
 - **Stack (LIFO)** is the core tool.  
@@ -68,20 +68,20 @@
   - RPN Evaluation (stack to track operands).  
   - Here: stack tracks *unclosed brackets*.  
 
----
+
 
 ## 🔹 Complexity
 - Time → `O(n)` (scan string once).  
 - Space → `O(n)` (worst case: all openings).  
 
----
+
 
 ## 🔹 How to remember
 - "Whenever you need to match pairs with nesting → **use a stack**."  
 - "Closing bracket? → must match the last opening bracket."  
 - "Valid string = stack empty at the end."  
 
----
+
 
 ## 🚀 Possible Extensions
 1. Add `< >` as valid brackets.  
@@ -89,7 +89,7 @@
 3. Return **index of first error** instead of just False.  
 4. Extend logic to **HTML/XML tag validation** (like `<div> ... </div>`).  
 
-````
+
 
 ---
 
