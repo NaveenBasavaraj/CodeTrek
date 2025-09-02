@@ -89,4 +89,3 @@ Key idea: *track seen values in constant-time structures while scanning once*.
 
 ---
 
-Do you want me to also create a **step-by-step dry run** of the hash set method with a small board so you can see how rows, cols, and squares evolve?
